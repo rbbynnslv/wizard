@@ -1,9 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-function Onboarding() {
-  return <h1>Onboarding</h1>;
-}
+import { Onboarding } from './pages/Onboarding'
+import './App.css'
 
 function App() {
   return (
