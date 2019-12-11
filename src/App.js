@@ -1,9 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-function Onboarding() {
-  return <h1>Onboarding</h1>;
-}
+// css
+import './App.css';
+
+// components
+import { Onboarding } from './pages/Onboarding';
 
 function App() {
   return (
