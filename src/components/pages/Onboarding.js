@@ -7,6 +7,8 @@ import {
   useLocation,
 } from 'react-router-dom';
 
+import { Step } from '../Step';
+
 import { NameForm } from '../forms/NameForm';
 import { EmailForm } from '../forms/EmailForm';
 import { AccessForm } from '../forms/AccessForm';
@@ -20,32 +22,6 @@ import { EmployeeCountForm } from '../forms/EmployeeCountForm';
 const styles = {
   backgroundColor: '#ceddce',
   padding: '8px',
-};
-
-const stepStyle = {
-  backgroundColor: '#f6beb3',
-  padding: '8px',
-  margin: '8px',
-};
-
-const Step = ({ step, stepKey, nextStep, previousStep, children }) => {
-  const next = formData => {
-    nextStep(step, stepKey, formData);
-  };
-
-  const prev = formData => {
-    previousStep(step, stepKey, formData);
-  };
-
-  return (
-    <div style={stepStyle}>
-      <h1>Step {step}</h1>
-      {children({ next, prev })}
-      {!!previousStep && (
-        <button onClick={() => previousStep(step)}>Previous</button>
-      )}
-    </div>
-  );
 };
 
 const hasStep = path => {

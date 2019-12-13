@@ -1,18 +1,12 @@
 import React from 'react';
 import useForm from 'react-hook-form';
 
+import { StepControls } from '../StepControls';
+
 export const NameForm = ({ next, prev }) => {
   const { register, errors, formState, handleSubmit, getValues } = useForm({
     mode: 'onBlur',
   });
-
-  const handleNext = () => {
-    next(getValues());
-  };
-
-  const handlePrevious = () => {
-    prev(getValues());
-  };
 
   return (
     <form name="userInfo">
@@ -28,12 +22,12 @@ export const NameForm = ({ next, prev }) => {
         placeholder="Last Name"
         ref={register({ required: true })}
       />
-      {next && (
-        <button disabled={!formState.isValid} onClick={handleNext}>
-          Next
-        </button>
-      )}
-      {prev && <button onClick={handlePrevious}>Previous</button>}
+      <StepControls
+        next={next}
+        prev={prev}
+        getValues={getValues}
+        isValid={formState.isValid}
+      />
     </form>
   );
 };
