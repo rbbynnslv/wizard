@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 
 // components
-import { Onboarding } from './pages/Onboarding';
+import { Onboarding } from './components/pages/Onboarding';
 
 function App() {
   return (
